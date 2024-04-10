@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Analog Clock</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        .main-div{
+            height:750px;
+            width:750px;
+            background-color: blue;
+            position: absolute;
+            left:520px;
+            top:50px;
+            border-radius:360%;
+            
+        }
+        .container{
+            height: 700px;
+            width: 700px;
+            background-color:antiquewhite;
+            position: absolute;
+            border-radius: 360%;
+            left:26px;
+            top: 26px;
+            
+        }
+        .one{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            left:320px;
+            position: absolute;
+        }
+        .two{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            left:500px;
+            top:40px;
+        }
+        .three{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            top:160px;
+            left:630px;
+        }
+        .four{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            top:330px;
+            left:675px;
+        }
+        .five{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            top:490px;
+            left:630px;
+        }
+        .six{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            left:510px;
+            top:610px;
+        }
+        .seven{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            left:330px;
+            top:650px;
+        }
+        .eight{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            top:610px;
+            left:170px;
+        }
+        .nine{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            top:490px;
+            left:50px;
+        }
+        .ten{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            top:330px;
+            left:5px;
+        }
+        .eleven{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            top:160px;
+            left:50px;
+        }
+        .twelve{
+            font-size: 45px;
+            color:rgb(182, 49, 49);
+            position: absolute;
+            left:170px;
+            top:40px;
+        }
+        .sub-div{
+            position: absolute;
+            height:40px;
+            width: 40px;
+            background-color: black;
+            border-radius: 50%;
+            top:330px;
+            left:330px;
+
+        }
+        .hour{
+            position: absolute;
+            background-color:black;
+            height:200px;
+            width: 12px;
+            border-radius: 20px;
+            left:403px;
+            top:175px;
+            
+        }
+        .minute{
+            position: absolute;
+            background-color: black;
+            height: 260px;
+            width: 12px;
+            border-radius: 20px;
+            left:343px;
+            top:90px;
+            transform-origin: bottom;  
+        }
+        .second{
+            background-color: black;
+            height: 300px;
+            width: 10px;
+            left:345px;
+            border-radius: 20px;
+            top:50px;
+            position: absolute;
+            transform-origin: bottom;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div" >
+        <div class="container">
+            <label class="one">12</label>
+            <label class="two">1</label>
+            <label class="three">2</label>
+            <label class="four">3</label>
+            <label class="five">4</label>
+            <label class="six">5</label>
+            <label class="seven">6</label>
+            <label class="eight">7</label>
+            <label class="nine">8</label>
+            <label class="ten">9</label>
+            <label class="eleven">10</label>
+            <label class="twelve">11</label>
+            <div class="sub-div"></div>
+            <div class="hour" id="hour"></div>
+            <div class="minute" id="minute"></div>
+            <div class="second" id="second"></div>
+        </div>
+    </div>
+    <script>
+       setInterval(() =>{
+        d = new Date();
+        htime =d.getHours();
+        mtime =d.getMinutes();
+        stime=d.getSeconds();
+        hrotation= 30 * htime + mtime /2;
+        mrotation= 6 * mtime;
+        srotation =6 * stime;
+
+        hour.style.transform=`rotate(${hrotation}deg)`;
+        minute.style.transform=`rotate(${mrotation}deg)`;
+        second.style.transform=`rotate(${srotation}deg)`;
+       })
+       
+    </script>
+</body>
+</html>
